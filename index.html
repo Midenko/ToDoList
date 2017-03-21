@@ -27,9 +27,9 @@
 			</thead>
 
 			<tbody>
-				<tr class="success" ng-repeat="task in todo.tasks | orderBy : 'name'" ng-click="todo.select()">
+				<tr class="success" ng-repeat="task in todo.tasks | orderBy : 'duedate'" ng-click="todo.select()">
 					<td>{{task.name}}</td>
-					<td>{{task.duedate}}</td>
+					<td>{{task.duedate | date : 'MM/dd/yyyy'}}</td>
 					<td>{{task.description}}</td>
 					<td>{{task.completed}}</td>
 				</tr>

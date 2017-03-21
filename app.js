@@ -12,7 +12,7 @@
 		this.tasks.push({
 			id: this.getCurrentId(),
 			name: this.name,
-			duedate: formatDate(this.duedate),
+			duedate: this.duedate,
 			description: this.description,
 			completed: this.completed ? "Yes" : "No"
 		});
@@ -23,17 +23,5 @@
 		else return this.tasks[this.tasks.length - 1].id++;
 	}
 
-	function formatDate(date) {
-
-		let dd = date.getDate();
-		if (dd < 10) dd = '0' + dd;
-
-		let mm = date.getMonth() + 1;
-		if (mm < 10) mm = '0' + mm;
-
-		let yy = date.getFullYear();
-
-		return dd + '.' + mm + '.' + yy;
-	}
 
 })(window.angular);
